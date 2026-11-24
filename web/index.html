@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cedar Clinic | Appointment desk</title>
+    <link rel="stylesheet" href="/src.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">+</span> Cedar Clinic</div>
+      <span class="demo-label">Demo data · IST</span>
+    </header>
+    <main>
+      <div class="page-heading">
+        <h1>Appointment desk</h1>
+        <p>Check availability, book or cancel through the voice assistant.</p>
+      </div>
+      <div class="workspace">
+        <div class="schedule">
+          <section class="panel" aria-labelledby="schedule-title">
+            <div class="panel-heading"><h2 id="schedule-title">Doctor availability</h2><span id="slot-count" class="caption"></span></div>
+            <div id="doctors"><p class="empty">Loading schedule…</p></div>
+          </section>
+          <section class="panel" aria-labelledby="booking-title">
+            <div class="panel-heading"><h2 id="booking-title">Appointments</h2><span id="booking-count" class="caption"></span></div>
+            <div id="appointments"><p class="empty">No appointments yet.</p></div>
+          </section>
+          <p id="schedule-error" class="error" role="status" hidden></p>
+        </div>
+        <section class="panel call-panel" aria-labelledby="call-title">
+          <div class="call-heading">
+            <span class="agent-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            <div><h2 id="call-title">Voice assistant</h2><p id="call-state" role="status">Ready to call</p></div>
+            <time id="timer" hidden>00:00</time>
+          </div>
+          <div class="transcript-heading"><h3>Live transcript</h3></div>
+          <div id="transcript" class="transcript" role="log" aria-label="Live transcript" aria-relevant="additions">
+            <p class="empty">The conversation will appear here.</p>
+          </div>
+          <p id="call-error" class="error" role="alert" hidden></p>
+          <div class="controls">
+            <button id="start" class="primary" type="button">Start call</button>
+            <button id="mute" type="button" aria-pressed="false" hidden>Mute</button>
+            <button id="stop" class="stop" type="button" hidden>End call</button>
+          </div>
+          <p class="call-note">Use a fictional phone number, such as +1 202 555 0147.</p>
+          <audio id="bot-audio" autoplay></audio>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="/src.js"></script>
+  </body>
+</html>
